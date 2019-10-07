@@ -1,6 +1,7 @@
 const express=require('express');
 const hbs=require('hbs');
 const fs=require('fs');
+const port=process.env.PORT || 3000;
 var app=express();
 hbs.registerPartials(__dirname+'/views/partials');
 hbs.registerHelper('CYear',()=>{
@@ -51,6 +52,6 @@ app.get('/bad',(request,response)=>{
         title:'data not found'
     });
 });
-app.listen(3000,()=>{
-    console.log('port 3000 is started')
+app.listen(port,()=>{
+    console.log(`port ${port} is started`);
 });  
