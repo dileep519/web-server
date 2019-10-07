@@ -23,6 +23,11 @@ app.use((request,response,next)=>{
 // app.use((req,res,next)=>{
 //     res.render('maintenance.hbs');
 // });
+app.get('/projects',(req,res)=>{
+    res.render('projects.hbs',{
+        pagetitle:'portfolio page'
+    });
+})
 app.use(express.static(__dirname+'/public'));
 app.get('/',(request,response)=>{
     /*response.send({
